@@ -1,0 +1,6 @@
+{
+    "dataset_type":"dataset_type_function",
+    "dataset_size":"5",
+    "dataset_data_type":"dataset_data_type_numeric",
+    "dataset_values":["2","4","6","8"]
+}

@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility=1.6
+mainClassName = "cat.urv.crises.distcom.Test"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    compile 'commons-codec:commons-codec:1.9'
+    compile 'com.googlecode.json-simple:json-simple:1.1.1'
+    compile fileTree(dir: 'libs', include: '*.jar')
+}
+
+
+
+jar {
+	def mancp = configurations.runtime.collect { it.getName() }.join(',')
+	manifest {
+		attributes (
+			"Main-Class" : "cat.urv.crises.distcom.Test",
+			"Class-Path" : mancp
+		)
+	}
+}
+
